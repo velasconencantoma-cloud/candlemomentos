@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle Momentos | Velas Artesanales de Soja</title>
+    <!-- Carga de Tailwind CSS para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo personalizado para usar la tipografía Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe; /* Fondo muy claro */
+        }
+        /* Colores del logo (aproximados) */
+        .text-brown-logo {
+            color: #6a4f45; /* Marrón oscuro para el texto principal */
+        }
+        .bg-cream-logo {
+            background-color: #f9f5f1; /* Color crema suave del fondo del logo */
+        }
+        .border-pink-subtle {
+            border-color: #d8c2c0; /* Un rosa sutil para bordes */
+        }
+        /* Estilo para el botón principal */
+        .btn-primary {
+            @apply inline-block px-8 py-3 text-lg font-semibold tracking-wider uppercase transition duration-300 transform rounded-full shadow-lg bg-brown-logo text-white hover:scale-105 hover:bg-opacity-90;
+        }
+    </style>
+</head>
+<body class="bg-cream-logo text-gray-800">
+
+    <!-- Encabezado (Header) -->
+    <header class="sticky top-0 z-10 bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4 max-w-7xl">
+            <!-- Logo y Nombre de Marca -->
+            <a href="#" class="flex items-center space-x-2">
+                <!-- LOGO PEQUEÑO EN EL HEADER -->
+                <!-- Asegúrate de subir tu imagen a GitHub en la ruta 'assets/logo.jpeg' -->
+                <img src="./assets/logo.jpeg" 
+                     alt="Candle Momentos Logo"
+                     class="w-10 h-10 object-contain rounded-md"
+                     onerror="this.onerror=null;this.src='https://placehold.co/40x40/f9f5f1/6a4f45?text=Logo'"
+                >
+                <span class="text-2xl font-bold text-brown-logo tracking-wider">Candle Momentos</span>
+            </a>
+            <!-- Menú de Navegación (visible en desktop) -->
+            <nav class="hidden md:flex space-x-6 text-brown-logo font-medium">
+                <a href="#inicio" class="hover:text-pink-400 transition">Inicio</a>
+                <a href="#productos" class="hover:text-pink-400 transition">Velas de Soja</a>
+                <a href="#nosotros" class="hover:text-pink-400 transition">Nuestra Historia</a>
+                <a href="#contacto" class="hover:text-pink-400 transition">Contacto</a>
+            </nav>
+            <!-- Botón de Menú para móvil (Hamburguesa) - funcional con JS básico -->
+            <button id="menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100 text-brown-logo transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Menú Móvil Desplegable -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white p-4 text-brown-logo font-medium shadow-lg">
+            <a href="#inicio" class="block py-2 hover:bg-gray-50 rounded transition">Inicio</a>
+            <a href="#productos" class="block py-2 hover:bg-gray-50 rounded transition">Velas de Soja</a>
+            <a href="#nosotros" class="block py-2 hover:bg-gray-50 rounded transition">Nuestra Historia</a>
+            <a href="#contacto" class="block py-2 hover:bg-gray-50 rounded transition">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <main>
+        <section id="inicio" class="bg-cream-logo py-20 md:py-32">
+            <div class="container mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center gap-10">
+                <!-- Contenido de Texto -->
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-brown-logo mb-4 leading-tight">
+                        Ilumina tus <span class="text-pink-400">Momentos</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8">
+                        Velas artesanales de soja, hechas a mano con amor y esencias naturales. Creamos la atmósfera perfecta para cada instante.
+                    </p>
+                    <a href="#productos" class="btn-primary">
+                        Ver Colección
+                    </a>
+                </div>
+
+                <!-- Imagen del Logo -->
+                <div class="md:w-1/2 flex justify-center">
+                    <!-- LOGO GRANDE EN LA SECCIÓN PRINCIPAL -->
+                    <!-- Reemplaza el placeholder con la ruta a tu imagen subida en GitHub: ./assets/logo.jpeg -->
+                    <img src="./assets/logo.jpeg" 
+                         alt="Logo de Candle Momentos: vela con flores"
+                         class="w-64 h-64 md:w-96 md:h-96 rounded-xl shadow-2xl p-4 border-4 border-pink-subtle object-contain"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Características / Propuesta de Valor -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="container mx-auto max-w-7xl px-6">
+                <h2 class="text-4xl font-bold text-center text-brown-logo mb-12">¿Por Qué Velas de Soja?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Característica 1: Ecológico -->
+                    <div class="p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-pink-subtle">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-brown-logo mb-2">Cera Natural</h3>
+                        <p class="text-gray-600">Hechas con cera de soja 100% natural, biodegradable y ecológica. Quema más limpia y dura más.</p>
+                    </div>
+
+                    <!-- Característica 2: Aroma -->
+                    <div class="p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-pink-subtle">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4M17 3v4M19 5h-4M17 17h4M12 18v.01M12 6v.01"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-brown-logo mb-2">Esencias Puras</h3>
+                        <p class="text-gray-600">Solo usamos aceites esenciales y fragancias de alta calidad. Aromas intensos y envolventes.</p>
+                    </div>
+
+                    <!-- Característica 3: Artesanal -->
+                    <div class="p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-pink-subtle">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5a2 2 0 012 2v2a2 2 0 01-2 2H7v11M16 11H8"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-brown-logo mb-2">Hechas a Mano</h3>
+                        <p class="text-gray-600">Cada vela es vertida y etiquetada individualmente con un cuidado artesanal único.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Productos Destacados -->
+        <section id="productos" class="bg-cream-logo py-16 md:py-24">
+            <div class="container mx-auto max-w-7xl px-6">
+                <h2 class="text-4xl font-bold text-center text-brown-logo mb-12">Nuestra Colección</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Producto 1 -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg border border-pink-subtle hover:shadow-2xl transition duration-300">
+                        <img src="https://placehold.co/600x400/e9e3df/6a4f45?text=Vela+Vainilla" 
+                             alt="Vela de Soja de Vainilla" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold text-brown-logo">Serenidad (Vainilla)</h3>
+                        <p class="text-gray-600 mt-1 mb-3">Aroma dulce y reconfortante. Perfecta para relajarse.</p>
+                        <span class="text-2xl font-extrabold text-pink-400">$18.00</span>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg border border-pink-subtle hover:shadow-2xl transition duration-300">
+                        <img src="https://placehold.co/600x400/e9e3df/6a4f45?text=Vela+Sándalo" 
+                             alt="Vela de Soja de Sándalo" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold text-brown-logo">Equilibrio (Sándalo)</h3>
+                        <p class="text-gray-600 mt-1 mb-3">Notas amaderadas y terrosas para meditar y concentrarse.</p>
+                        <span class="text-2xl font-extrabold text-pink-400">$22.00</span>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg border border-pink-subtle hover:shadow-2xl transition duration-300">
+                        <img src="https://placehold.co/600x400/e9e3df/6a4f45?text=Vela+Cítricos" 
+                             alt="Vela de Soja de Cítricos" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-xl font-bold text-brown-logo">Vitalidad (Cítricos)</h3>
+                        <p class="text-gray-600 mt-1 mb-3">Un toque fresco y vibrante para empezar el día con energía.</p>
+                        <span class="text-2xl font-extrabold text-pink-400">$19.50</span>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#contacto" class="btn-primary bg-pink-400 hover:bg-pink-500 text-white">
+                        ¡Compra Ahora!
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="bg-white py-16 md:py-24">
+            <div class="container mx-auto max-w-4xl px-6 text-center">
+                <h2 class="text-4xl font-bold text-brown-logo mb-4">¿Preguntas? Contáctanos</h2>
+                <p class="text-xl text-gray-600 mb-8">Estamos aquí para ayudarte a encontrar tu "momento" perfecto.</p>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="mailto:hola@candlemomentos.com" class="flex items-center justify-center space-x-2 text-lg font-medium text-pink-400 hover:text-pink-500 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.84 5.25A2 2 0 0012 14a2 2 0 001.16-.38L21 8m-9 9l-4-4"></path></svg>
+                        <span>hola@candlemomentos.com</span>
+                    </a>
+                    <a href="tel:+525512345678" class="flex items-center justify-center space-x-2 text-lg font-medium text-pink-400 hover:text-pink-500 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.71 1.63a11.05 11.05 0 005.107 5.107l1.63-2.71a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 17.72V19a2 2 0 01-2 2h-3.28a1 1 0 01-.948-.684l-1.498-4.493a1 1 0 01.502-1.21l2.71-1.63A11.05 11.05 0 006 8.35v1.27a.5.5 0 00.5.5h1a.5.5 0 00.5-.5V8.35A11.05 11.05 0 003 5z"></path></svg>
+                        <span>+52 55 1234 5678</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-brown-logo text-white py-8">
+        <div class="container mx-auto max-w-7xl px-6 text-center">
+            <p class="mb-4">&copy; 2025 Candle Momentos. Todos los derechos reservados.</p>
+            <div class="flex justify-center space-x-6">
+                <!-- Íconos de Redes Sociales (Placeholders) -->
+                <a href="#" target="_blank" class="hover:text-pink-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zm-3 8.5c-2.34 0-4.25-1.91-4.25-4.25S9.66 8.75 12 8.75s4.25 1.91 4.25 4.25-1.91 4.25-4.25 4.25zM15 12a3 3 0 10-6 0 3 3 0 006 0z"></path></svg>
+                </a>
+                <a href="#" target="_blank" class="hover:text-pink-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.5 0h-21C.672 0 0 .672 0 1.5v21C0 23.328.672 24 1.5 24h21c.828 0 1.5-.672 1.5-1.5v-21c0-.828-.672-1.5-1.5-1.5zm-4.35 6h2.288v4.35H18.15V20.25h-4.35V10.35h-2.925V6H13.8V3.75c0-1.282.883-2.25 2.52-2.25H18.15v2.25h-1.875c-.375 0-.675.3-.675.675V6z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica simple para el menú móvil
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar menú móvil al hacer click en un enlace
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Asegurarse de que el logo se muestre correctamente al cargar.
+        // Si subes tu imagen a GitHub, usa la URL de la imagen aquí:
+        // document.querySelector('.hero img').src = 'URL_DE_TU_LOGO_EN_GITHUB'; 
+    </script>
+</body>
+</html>
